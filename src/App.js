@@ -1,8 +1,8 @@
-import logo from "./logo.svg";
 import "./App.css";
+import Clock from "./clock/Clock";
 
 function App() {
-  return <h1>Galactic Clock</h1>;
+  return <Clock />;
 }
 
 export default App;
