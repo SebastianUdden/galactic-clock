@@ -18,18 +18,22 @@ const Time = styled.div`
   width: 100%;
   height: 100%;
 `;
+const Center = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  background-color: #000000bb;
+  padding: 1rem 4rem;
+`;
 const Text = styled.h1`
   color: #111;
-  background-color: #00000022;
-  font-size: 5rem;
-  padding: 2rem;
-  border-radius: 12px;
-  width: 50%;
-  text-align: left;
-  padding-left: 10%;
+  font-family: monospace;
+  font-size: calc(2px + 12vmin);
+  white-space: nowrap;
 `;
 const Seconds = styled.span`
-  color: #ffffffaa;
+  color: #ffffffdd;
 `;
 
 const formatTime = (time) => {
@@ -53,9 +57,13 @@ export default ({}) => {
   return (
     <Clock src={galaxy}>
       <Time>
-        <Text>
-          {hh}:{mm}:<Seconds>{ss}</Seconds>
-        </Text>
+        <Center>
+          <Text>
+            <Seconds>
+              {hh}:{mm}:{ss}
+            </Seconds>
+          </Text>
+        </Center>
       </Time>
     </Clock>
   );
