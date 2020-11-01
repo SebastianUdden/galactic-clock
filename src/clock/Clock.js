@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import galaxy from "../assets/galaxy.jpg";
 
-const Clock = styled.div`
+const Wrapper = styled.div`
   background-image: ${(p) => `url(${p.src})`};
   background-position: center;
   background-size: cover;
@@ -41,7 +41,7 @@ const formatTime = (time) => {
   return time;
 };
 
-export default ({}) => {
+const Clock = () => {
   const [now, setNow] = useState(new Date());
   const [count, setCount] = useState(0);
 
@@ -55,7 +55,7 @@ export default ({}) => {
   const mm = formatTime(now.getMinutes());
   const ss = formatTime(now.getSeconds());
   return (
-    <Clock src={galaxy}>
+    <Wrapper src={galaxy}>
       <Time>
         <Center>
           <Text>
@@ -65,6 +65,8 @@ export default ({}) => {
           </Text>
         </Center>
       </Time>
-    </Clock>
+    </Wrapper>
   );
 };
+
+export default Clock;
